@@ -160,8 +160,11 @@ iprint.df(show_data, scale=TRUE)
 **Answers**
 
 *1. We need at least 6 components
+
 *2. The highest weights associated with the first principal components are 0.93, 0.86, 0.85
+
 *3. Component 1: North American bonds, Component 2: Currencies, Component 3: European stock market indexes, Component 4: North American market indexes, Component 5: European bonds, Component 6: Oil, Component 7: Metals, Component 8: Agricultural commodities, Component 9: Precious metals, Component 10: Asian stock market indexes
+
 *4. 
 Pre-crisis years
 ```{r echo=TRUE, tidy=TRUE}
