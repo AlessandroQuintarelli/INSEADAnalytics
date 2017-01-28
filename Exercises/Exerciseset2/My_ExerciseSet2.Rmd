@@ -165,8 +165,8 @@ iprint.df(show_data, scale=TRUE)
 
 <br> 3. Component 1: North American bonds, Component 2: Currencies, Component 3: European stock market indexes, Component 4: North American market indexes, Component 5: European bonds, Component 6: Oil, Component 7: Metals, Component 8: Agricultural commodities, Component 9: Precious metals, Component 10: Asian stock market indexes
 
-<br> 4. 
-- Pre-crisis years
+<br> 4. Principal components and scree plot:
+a) Pre-crisis years (bull markets)
 ```{r echo=TRUE, tidy=TRUE}
 before_crisis_data = futures_data[ as.Date(rownames(futures_data)) < "2007-10-01", ]
 before_crisis_components <- PCA(before_crisis_data, graph=FALSE)
@@ -177,7 +177,7 @@ plot(eigen_before_crisis, col="red")
 lines(rep(1,length(eigen_before_crisis)),col="green")
 ```
 
-- Financial-crisis years:
+b) Financial-crisis years (bear markets)
 ```{r echo=TRUE, tidy=TRUE}
 crisis_data = futures_data[ as.Date(rownames(futures_data)) > "2007-10-01" & as.Date(rownames(futures_data)) < "2009-03-01" , ]
 crisis_components <- PCA(crisis_data, graph=FALSE)
@@ -188,8 +188,8 @@ plot(eigen_crisis, col="red")
 lines(rep(1,length(eigen_crisis)),col="green")
 ```
 
-<br> 5. 
-- Pre-crisis years: 
+<br> 5. Differences about the futures returns during  bull and bear markets
+- Pre-crisis years (bull markets)
 ```{r echo=TRUE, tidy=TRUE}
 before_corused = cor(before_crisis_data[,apply(before_crisis_data!=0,2,sum) > 10, drop=F])
 Rotated_Results<-principal(before_corused, nfactors=20, rotate="varimax",score=TRUE)
@@ -204,7 +204,7 @@ show_data_before <- Rotated_Factors
 iprint.df(show_data_before, scale=TRUE)
 ```
 
-- Financial-crisis years:
+- Financial-crisis years (bear markets)
 ```{r echo=TRUE, tidy=TRUE}
 crisis_corused = cor(crisis_data[,apply(crisis_data!=0,2,sum) > 10, drop=F])
 Rotated_Results<-principal(crisis_corused, nfactors=20, rotate="varimax",score=TRUE)
