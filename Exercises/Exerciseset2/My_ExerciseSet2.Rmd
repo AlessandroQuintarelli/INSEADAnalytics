@@ -166,7 +166,7 @@ iprint.df(show_data, scale=TRUE)
 3. Component 1: North American bonds, Component 2: Currencies, Component 3: European stock market indexes, Component 4: North American market indexes, Component 5: European bonds, Component 6: Oil, Component 7: Metals, Component 8: Agricultural commodities, Component 9: Precious metals, Component 10: Asian stock market indexes
 
 4. 
-Pre-crisis years
+- Pre-crisis years
 ```{r echo=TRUE, tidy=TRUE}
 before_crisis_data = futures_data[ as.Date(rownames(futures_data)) < "2007-10-01", ]
 before_crisis_components <- PCA(before_crisis_data, graph=FALSE)
@@ -176,7 +176,7 @@ eigen_before_crisis <- before_crisis_table[,"Eigenvalue"]
 plot(eigen_before_crisis, col="red")
 lines(rep(1,length(eigen_before_crisis)),col="green")
 ```
-Financial-crisis years:
+- Financial-crisis years:
 ```{r echo=TRUE, tidy=TRUE}
 crisis_data = futures_data[ as.Date(rownames(futures_data)) > "2007-10-01" & as.Date(rownames(futures_data)) < "2009-03-01" , ]
 crisis_components <- PCA(crisis_data, graph=FALSE)
@@ -188,7 +188,7 @@ lines(rep(1,length(eigen_crisis)),col="green")
 ```
 
 5. 
-Pre-crisis years: 
+- Pre-crisis years: 
 ```{r echo=TRUE, tidy=TRUE}
 before_corused = cor(before_crisis_data[,apply(before_crisis_data!=0,2,sum) > 10, drop=F])
 Rotated_Results<-principal(before_corused, nfactors=20, rotate="varimax",score=TRUE)
@@ -203,7 +203,7 @@ show_data_before <- Rotated_Factors
 iprint.df(show_data_before, scale=TRUE)
 ```
 
-Financial-crisis years:
+- Financial-crisis years:
 ```{r echo=TRUE, tidy=TRUE}
 crisis_corused = cor(crisis_data[,apply(crisis_data!=0,2,sum) > 10, drop=F])
 Rotated_Results<-principal(crisis_corused, nfactors=20, rotate="varimax",score=TRUE)
@@ -288,7 +288,7 @@ How does this compare with **existing CTA products** such as [this one from Soci
 
 1. It calculates moving averages using function "ma" using different windows defined by the vector "MAfreq". This vector defines both the lenght of the window and the number of different values that will be considered. Averages are scaled to obtain weights with total sum of 1 every day. After that, weights are multiplied with futures prices to define how much to invest every future day. Finally, the cumulative result is calculated as sum cross-future for every day.
 
-2.Using a WMA instead of a normal MA, we obtain the following performances:
+2. Using a WMA instead of a normal MA, we obtain the following performances:
 ```{r echo=TRUE, tidy=TRUE}
 signal_used = 0*futures_data # just initialize the trading signal to be 0
 # Take many moving Average (MA) Signals and let them "vote" with their sign (+-1, e.g. long or short vote, for each signal)
