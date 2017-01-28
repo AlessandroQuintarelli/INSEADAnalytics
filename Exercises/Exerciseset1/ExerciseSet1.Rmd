@@ -148,10 +148,13 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 - ncol(transposedData) to have the number of columns;
 - dim(transposedData) to have both number of rows and number of columns.
 
-<br> 2. transposedData = t(StockReturns)
-> portfolio = apply(transposedData,2,mean)
-> names(portfolio) <- row.names(StockReturns[,c(1,2)])
-> pnl_plot(portfolio)
+<br> 2. 
+```{r, eval=TRUE, echo = TRUE}
+transposedData = t(StockReturns)
+portfolio = apply(transposedData,2,mean)
+names(portfolio) <- row.names(StockReturns[,c(1,2)])
+pnl_plot(portfolio)
+```
 
 <hr>
 <hr>
