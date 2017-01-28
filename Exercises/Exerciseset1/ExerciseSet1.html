@@ -110,11 +110,12 @@ source(&quot;dataSet1.R&quot;)
 <h4>Optional Question</h4>
 
 <ol>
-<li>Can you find some interesting finance related R package or github repository? 
-<strong>Your Answers here:</strong>
-<br>
-<br></li>
+<li>Can you find some interesting finance related R package or github repository?</li>
 </ol>
+
+<p><br><strong>Your Answers here:</strong></p>
+
+<p><br>1. &quot;quantmod&quot; is a finance related R package</p>
 
 <hr>
 
@@ -146,7 +147,7 @@ source(&quot;dataSet1.R&quot;)
 
 <p><br> 1. The data of Apple returns are downloaded from Yahoo through the file &quot;dataSet1.R&quot;, and are included in the variable &quot;mytickers&quot;</p>
 
-<p><br> 2. </p>
+<p><br> 2. Performance of Apple during the period:</p>
 
 <ul>
 <li>Cumulative daily returns: round(100*sum(StockReturns[,2]),1)% -&gt; 597.2%</li>
@@ -154,15 +155,17 @@ source(&quot;dataSet1.R&quot;)
 <li>Standard deviation of daily returns: round(100*sd(StockReturns[,2]),3) -&gt; 2.388%</li>
 </ul>
 
-<p><br>3. In the file &quot;dataSet1.R&quot; we have to add in the line mytickers &quot;YHOO&quot;, save and run the file again. Statistics for Yahoo:</p>
+<p><br> 3. In the file &quot;dataSet1.R&quot; we have to add in the line mytickers &quot;YHOO&quot;, save and run the file again. Statistics for Yahoo:</p>
 
 <ul>
 <li>Cumulative daily returns: round(100*sum(StockReturns[,3]),1)% -&gt; 290.7%</li>
 <li>Average daily returns: round(100*mean(StockReturns[,3]),3) -&gt; 0.072%</li>
-<li>Standard deviation of daily returns: round(100*sd(StockReturns[,3]),3) -&gt; 3.018%
-<hr>
-<hr></li>
+<li>Standard deviation of daily returns: round(100*sd(StockReturns[,3]),3) -&gt; 3.018%</li>
 </ul>
+
+<hr>
+
+<hr>
 
 <h3>Part II: Simple Matrix Manipulations</h3>
 
@@ -192,21 +195,23 @@ tail(StockReturns,5)
 <li>Based on the help for the R function <em>apply</em> (<code>help(apply)</code>), can you create again the portfolio of S&amp;P and Apple and plot the returns in a new figure below?</li>
 </ol>
 
-<p><strong>Your Answers here:</strong>
-<br> 
-1. nrow(transposedData) to have the number of rows;
-ncol(transposedData) to have the number of columns;
-dim(transposedData) to have both number of rows and number of columns
-<br> 
-2. transposedData = t(StockReturns)</p>
+<p><strong>Your Answers here:</strong></p>
+
+<p><br> 1. R commands to get the number of rows and number of columns:</p>
+
+<ul>
+<li>nrow(transposedData) to have the number of rows;</li>
+<li>ncol(transposedData) to have the number of columns;</li>
+<li>dim(transposedData) to have both number of rows and number of columns.</li>
+</ul>
+
+<p><br> 2. transposedData = t(StockReturns)</p>
 
 <blockquote>
 <p>portfolio = apply(transposedData,2,mean)
 names(portfolio) &lt;- row.names(StockReturns[,c(1,2)])
 pnl_plot(portfolio)</p>
 </blockquote>
-
-<p><br></p>
 
 <hr>
 
@@ -223,11 +228,11 @@ pnl_plot(portfolio)</p>
 <li><em>(Extra Exercise)</em>  Can you get the returns of a few companies and plot the returns of an equal weighted portfolio with those companies during some period you select? </li>
 </ol>
 
-<p><strong>Your Answers here:</strong>
-<br> 1.In file dataSet1.R write startDate = &quot;2001-01-01&quot; save settings and run the dataset agin.
-<br>
-<br>
-<br></p>
+<p><strong>Your Answers here:</strong></p>
+
+<p><br> 1.In file dataSet1.R write startDate = &quot;2001-01-01&quot; save settings and run the dataset agin.</p>
+
+<p><br> 2. You add new stocks including their symbol (e.g., FB) in mytickers (dataSet1.R). Then you run again with command source(&quot;dataSet1.R&quot;). After that we can repeat the function apply(StockReturns,1,mean) to compute the reutrn of the portfolio which is equally weighted. </p>
 
 <hr>
 
@@ -257,11 +262,11 @@ pnl_plot(portfolio)</p>
 <pre><code class="r">myData + StockReturns[1:40,]
 </code></pre>
 
-<p><strong>Your Answers here:</strong>
-<br> 1. Writing the commands as they are the result given by R is 20. However, changing the separator from &quot;;&quot; to &quot;,&quot; when reading the csv file, the result becomes 60.
-<br>
-<br>
-<br></p>
+<p><strong>Your Answers here:</strong></p>
+
+<p><br> 1. Writing the commands as they are the result given by R is 20. However, changing the separator from &quot;;&quot; to &quot;,&quot; when reading the csv file, the result becomes 60.</p>
+
+<p><br> 2. You get an error as you are trying to sum a list and a vector. Moreover, the number of rows is different (20 vs 40).</p>
 
 <hr>
 
@@ -300,7 +305,7 @@ pnl_plot(portfolio)</p>
 })
 </code></pre>
 
-<p>&lt;!--html_preserve--&gt;<div id="outf9ad5161ce25da57" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>&lt;!--/html_preserve--&gt;</p>
+<p>&lt;!--html_preserve--&gt;<div id="out858704878546f2f8" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>&lt;!--/html_preserve--&gt;</p>
 
 <p><br></p>
 

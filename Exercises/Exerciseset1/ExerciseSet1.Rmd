@@ -67,6 +67,7 @@ For more information on downloading finance data from the internet as well as on
 <br>**Your Answers here:**
 
 <br>1. "quantmod" is a finance related R package
+
 <hr>
 <hr>
 
@@ -104,6 +105,7 @@ pnl_plot(SPY)
 - Cumulative daily returns: round(100*sum(StockReturns[,3]),1)% -> 290.7%
 - Average daily returns: round(100*mean(StockReturns[,3]),3) -> 0.072%
 - Standard deviation of daily returns: round(100*sd(StockReturns[,3]),3) -> 3.018%
+
 <hr>
 <hr>
 
@@ -150,6 +152,7 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 > portfolio = apply(transposedData,2,mean)
 > names(portfolio) <- row.names(StockReturns[,c(1,2)])
 > pnl_plot(portfolio)
+
 <hr>
 <hr>
 
@@ -166,7 +169,8 @@ This is an important step and will get you to think about the overall process on
 
 <br> 1.In file dataSet1.R write startDate = "2001-01-01" save settings and run the dataset agin.
 
-<br> 2. You add new stocks including their symbol (e.g., FB) in mytickers (dataSet1.R). Then you run again with command source("dataSet1.R"). After that we can repeat the function apply(StockReturns,1,mean) to compute the reutrn of the portfolio which is equally weighted. 
+<br> 2. You add new stocks including their symbol (e.g., FB) in mytickers (dataSet1.R). Then you run again with command source("dataSet1.R"). After that we can repeat the function apply(StockReturns,1,mean) to compute the reutrn of the portfolio which is equally weighted.
+
 <hr>
 <hr>
 
@@ -200,6 +204,7 @@ myData + StockReturns[1:40,]
 <br> 1. Writing the commands as they are the result given by R is 20. However, changing the separator from ";" to "," when reading the csv file, the result becomes 60.
 
 <br> 2. You get an error as you are trying to sum a list and a vector. Moreover, the number of rows is different (20 vs 40).
+
 <hr>
 <hr>
 
