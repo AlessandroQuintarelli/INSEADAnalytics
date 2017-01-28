@@ -166,7 +166,7 @@ iprint.df(show_data, scale=TRUE)
 <br> 3. Component 1: North American bonds, Component 2: Currencies, Component 3: European stock market indexes, Component 4: North American market indexes, Component 5: European bonds, Component 6: Oil, Component 7: Metals, Component 8: Agricultural commodities, Component 9: Precious metals, Component 10: Asian stock market indexes
 
 <br> 4. Principal components and scree plot:
-a) Pre-crisis years (bull markets)
+- Pre-crisis years (bull markets)
 ```{r echo=TRUE, tidy=TRUE}
 before_crisis_data = futures_data[ as.Date(rownames(futures_data)) < "2007-10-01", ]
 before_crisis_components <- PCA(before_crisis_data, graph=FALSE)
@@ -177,7 +177,7 @@ plot(eigen_before_crisis, col="red")
 lines(rep(1,length(eigen_before_crisis)),col="green")
 ```
 
-b) Financial-crisis years (bear markets)
+- Financial-crisis years (bear markets)
 ```{r echo=TRUE, tidy=TRUE}
 crisis_data = futures_data[ as.Date(rownames(futures_data)) > "2007-10-01" & as.Date(rownames(futures_data)) < "2009-03-01" , ]
 crisis_components <- PCA(crisis_data, graph=FALSE)
