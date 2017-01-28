@@ -63,8 +63,10 @@ For more information on downloading finance data from the internet as well as on
 #### Optional Question 
 
 1. Can you find some interesting finance related R package or github repository?
-<br>**Your Answers here:** 
-<br>"quantmod" is a finance related R package
+
+<br>**Your Answers here:**
+
+<br>1. "quantmod" is a finance related R package
 <hr>
 <hr>
 
@@ -92,10 +94,12 @@ pnl_plot(SPY)
 **Your Answers here:**
 
 <br> 1. The data of Apple returns are downloaded from Yahoo through the file "dataSet1.R", and are included in the variable "mytickers"
+
 <br> 2. Performance of Apple during the period:
 - Cumulative daily returns: round(100*sum(StockReturns[,2]),1)% -> 597.2%
 - Average daily returns: round(100*mean(StockReturns[,2]),3) -> 0.148%
 - Standard deviation of daily returns: round(100*sd(StockReturns[,2]),3) -> 2.388%
+
 <br> 3. In the file "dataSet1.R" we have to add in the line mytickers "YHOO", save and run the file again. Statistics for Yahoo:
 - Cumulative daily returns: round(100*sum(StockReturns[,3]),1)% -> 290.7%
 - Average daily returns: round(100*mean(StockReturns[,3]),3) -> 0.072%
@@ -136,10 +140,12 @@ We can also transpose the matrix of returns to create a new "horizontal" matrix.
 2. Based on the help for the R function *apply* (`help(apply)`), can you create again the portfolio of S&P and Apple and plot the returns in a new figure below?
 
 **Your Answers here:**
+
 <br> 1. R commands to get the number of rows and number of columns:
 - nrow(transposedData) to have the number of rows;
 - ncol(transposedData) to have the number of columns;
-- dim(transposedData) to have both number of rows and number of columns
+- dim(transposedData) to have both number of rows and number of columns.
+
 <br> 2. transposedData = t(StockReturns)
 > portfolio = apply(transposedData,2,mean)
 > names(portfolio) <- row.names(StockReturns[,c(1,2)])
@@ -157,7 +163,9 @@ This is an important step and will get you to think about the overall process on
 2. *(Extra Exercise)*  Can you get the returns of a few companies and plot the returns of an equal weighted portfolio with those companies during some period you select? 
 
 **Your Answers here:**
+
 <br> 1.In file dataSet1.R write startDate = "2001-01-01" save settings and run the dataset agin.
+
 <br> 2. You add new stocks including their symbol (e.g., FB) in mytickers (dataSet1.R). Then you run again with command source("dataSet1.R"). After that we can repeat the function apply(StockReturns,1,mean) to compute the reutrn of the portfolio which is equally weighted. 
 <hr>
 <hr>
@@ -188,8 +196,10 @@ myData + StockReturns[1:40,]
 ```
 
 **Your Answers here:**
+
 <br> 1. Writing the commands as they are the result given by R is 20. However, changing the separator from ";" to "," when reading the csv file, the result becomes 60.
-<br> 2. You get an error as you are trying to sum a list and a vector. Moreover, the number of rows is different (20 vs 40)
+
+<br> 2. You get an error as you are trying to sum a list and a vector. Moreover, the number of rows is different (20 vs 40).
 <hr>
 <hr>
 
