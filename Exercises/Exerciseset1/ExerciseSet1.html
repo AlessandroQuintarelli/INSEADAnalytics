@@ -142,17 +142,21 @@ source(&quot;dataSet1.R&quot;)
 <li><em>(Extra points)</em> What if we want to also see the returns of another company, say Yahoo!, in the same period? Can you get that data and report the statistics for Yahoo!&#39;s stock, too? </li>
 </ol>
 
-<p><strong>Your Answers here:</strong>
-<br> 
-1. The data of Apple returns are downloaded from Yahoo through the file &quot;dataSet1.R&quot;, and are included in the variable &quot;mytickers&quot;
-<br>
-<br> 2. - Cumulative daily returns: round(100*sum(StockReturns[,2]),1)% -&gt; 597.2%</p>
+<p><strong>Your Answers here:</strong></p>
+
+<p><br> 1. The data of Apple returns are downloaded from Yahoo through the file &quot;dataSet1.R&quot;, and are included in the variable &quot;mytickers&quot;</p>
+
+<p><br> 2. </p>
 
 <ul>
+<li>Cumulative daily returns: round(100*sum(StockReturns[,2]),1)% -&gt; 597.2%</li>
 <li>Average daily returns: round(100*mean(StockReturns[,2]),3) -&gt; 0.148%</li>
-<li>Standard deviation of daily returns: round(100*sd(StockReturns[,2]),3) -&gt; 2.388%
-<br></li>
-<li>In the file &quot;dataSet1.R&quot; we have to add in the line mytickers &quot;YHOO&quot;, save and run the file again. Statistics for Yahoo:</li>
+<li>Standard deviation of daily returns: round(100*sd(StockReturns[,2]),3) -&gt; 2.388%</li>
+</ul>
+
+<p><br>3. In the file &quot;dataSet1.R&quot; we have to add in the line mytickers &quot;YHOO&quot;, save and run the file again. Statistics for Yahoo:</p>
+
+<ul>
 <li>Cumulative daily returns: round(100*sum(StockReturns[,3]),1)% -&gt; 290.7%</li>
 <li>Average daily returns: round(100*mean(StockReturns[,3]),3) -&gt; 0.072%</li>
 <li>Standard deviation of daily returns: round(100*sd(StockReturns[,3]),3) -&gt; 3.018%
@@ -296,7 +300,7 @@ pnl_plot(portfolio)</p>
 })
 </code></pre>
 
-<p>&lt;!--html_preserve--&gt;<div id="out54218f603c0d60b3" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>&lt;!--/html_preserve--&gt;</p>
+<p>&lt;!--html_preserve--&gt;<div id="outf9ad5161ce25da57" class="shiny-plot-output" style="width: 100% ; height: 400px"></div>&lt;!--/html_preserve--&gt;</p>
 
 <p><br></p>
 

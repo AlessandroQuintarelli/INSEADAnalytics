@@ -95,7 +95,8 @@ pnl_plot(SPY)
 
 <br> 1. The data of Apple returns are downloaded from Yahoo through the file "dataSet1.R", and are included in the variable "mytickers"
 
-<br> 2. - Cumulative daily returns: round(100*sum(StockReturns[,2]),1)% -> 597.2%
+<br> 2. 
+- Cumulative daily returns: round(100*sum(StockReturns[,2]),1)% -> 597.2%
 - Average daily returns: round(100*mean(StockReturns[,2]),3) -> 0.148%
 - Standard deviation of daily returns: round(100*sd(StockReturns[,2]),3) -> 2.388%
 
