@@ -159,13 +159,13 @@ iprint.df(show_data, scale=TRUE)
 
 **Answers**
 
-1. We need at least 6 components
+<br> 1. We need at least 6 components
 
-2. The highest weights associated with the first principal components are 0.93, 0.86, 0.85
+<br> 2. The highest weights associated with the first principal components are 0.93, 0.86, 0.85.
 
-3. Component 1: North American bonds, Component 2: Currencies, Component 3: European stock market indexes, Component 4: North American market indexes, Component 5: European bonds, Component 6: Oil, Component 7: Metals, Component 8: Agricultural commodities, Component 9: Precious metals, Component 10: Asian stock market indexes
+<br> 3. Component 1: North American bonds, Component 2: Currencies, Component 3: European stock market indexes, Component 4: North American market indexes, Component 5: European bonds, Component 6: Oil, Component 7: Metals, Component 8: Agricultural commodities, Component 9: Precious metals, Component 10: Asian stock market indexes
 
-4. 
+<br> 4. 
 - Pre-crisis years
 ```{r echo=TRUE, tidy=TRUE}
 before_crisis_data = futures_data[ as.Date(rownames(futures_data)) < "2007-10-01", ]
@@ -176,6 +176,7 @@ eigen_before_crisis <- before_crisis_table[,"Eigenvalue"]
 plot(eigen_before_crisis, col="red")
 lines(rep(1,length(eigen_before_crisis)),col="green")
 ```
+
 - Financial-crisis years:
 ```{r echo=TRUE, tidy=TRUE}
 crisis_data = futures_data[ as.Date(rownames(futures_data)) > "2007-10-01" & as.Date(rownames(futures_data)) < "2009-03-01" , ]
@@ -187,7 +188,7 @@ plot(eigen_crisis, col="red")
 lines(rep(1,length(eigen_crisis)),col="green")
 ```
 
-5. 
+<br> 5. 
 - Pre-crisis years: 
 ```{r echo=TRUE, tidy=TRUE}
 before_corused = cor(before_crisis_data[,apply(before_crisis_data!=0,2,sum) > 10, drop=F])
